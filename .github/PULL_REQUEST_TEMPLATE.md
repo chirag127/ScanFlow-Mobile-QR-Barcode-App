@@ -1,46 +1,56 @@
-# Pull Request Template
+# Pull Request: Apex Verification Gate
 
-## Pull Request Checklist
+## 1. Commit & Title Guidelines
+*   **Title Format:** Must strictly adhere to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/): `<type>(<scope>): <description>`
+    *   *Example Scopes for Mobile:* `(scanner)`, `(ui)`, `(api)`, `(state)`, `(config)`.
+    *   *Example Titles:* `feat(scanner): Add support for Aztec code decoding`, `fix(ui): Correct layout shift on configuration screen`.
 
-Before submitting your pull request, please review and check off the following items:
+## 2. Type Selection
+<!-- Select ONE primary type that best describes the impact of this PR -->
 
-*   [ ] **Commit Message Format:** My commit messages adhere to the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification (e.g., `feat: add user authentication`, `fix: resolve infinite loop in scanner`, `docs: update README with build instructions`).
-*   [ ] **Code Formatting:** My code is formatted according to the project's standards (e.g., using Biome/Ruff). I have run the formatter and linter.
-*   [ ] **Testing:** My changes include relevant unit and/or integration tests. All tests are passing.
-*   [ ] **Documentation:** I have updated any relevant documentation (e.g., `README.md`, code comments if necessary for *why* not *what*).
-*   [ ] **Self-Review:** I have performed a thorough self-review of my own code and addressed potential issues.
-*   [ ] **Branch:** My branch is up-to-date with the latest changes from the `main` branch.
-*   [ ] **AI Agent Directives:** If applicable, I have considered how my changes align with the AI Agent Directives in `AGENTS.md`.
+- [ ] **feat**: A new feature or capability (Signals a Minor version bump).
+- [ ] **fix**: A bug fix addressing functional or visual errors (Signals a Patch version bump).
+- [ ] **refactor**: Code reorganization that preserves external behavior (Signals a Patch version bump).
+- [ ] **test**: Adding missing tests or correcting existing test implementation.
+- [ ] **docs**: Documentation-only changes (README, comments, templates).
+- [ ] **chore**: Changes to the build process, CI/CD, or auxiliary tools (No version bump).
 
-## Description
+## 3. Bottom Line Up Front (BLUF) Summary
+<!-- Provide a concise, two-sentence summary of what this PR achieves. Why should the reviewer care? -->
 
-Briefly describe the changes introduced by this pull request. What problem does it solve, or what feature does it add?
+## 4. Context & Motivation
+<!-- Why is this change necessary? Link directly to related issues using keywords (e.g., `Closes #123`, `Fixes #45`). -->
 
-(Please provide a clear and concise summary here.)
+<!-- Describe architectural impact: Did this implement a Command or Query? Did it adhere to SOLID principles (especially SRP)? -->
 
-## Related Issues
+## 5. Implementation Details & Verification
+### A. Feature/Logic Description
+<!-- Detail the core changes. If modifying the scanning pipeline, explain the new algorithm or dependency usage. -->
 
-If this pull request resolves or relates to any open issues, please link them here (e.g., `Closes #123`, `Fixes #456`).
+### B. Testing Protocol Execution (MANDATORY GATE)
+*   **Unit/Component Tests:**
+    *   [ ] New or modified logic is covered by Unit Tests (Vitest/Jest).
+    *   [ ] State transition verification is in place.
+*   **E2E/Integration Tests (if applicable):**
+    *   [ ] Critical user flows impacted by this PR are validated by E2E tests (Detox/Playwright).
+*   **Coverage Verification:**
+    *   [ ] CI pipeline shows zero test failures.
 
-## Type of Change
+### C. Documentation & Configuration
+*   [ ] In-app documentation (Tooltips, Settings descriptions) updated if UI/UX changed.
+*   [ ] Environment variables or configuration files (`app.config.ts`, etc.) reviewed and updated if necessary.
+*   [ ] Architecture/Agent documentation reviewed if fundamental changes occurred.
 
-*   [ ] Bug fix (non-breaking change which fixes an issue)
-*   [ ] New feature (non-breaking change which adds functionality)
-*   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-*   [ ] Documentation update
-*   [ ] Chore (maintenance, refactoring, etc.)
+## 6. Apex Architectural Alignment Check
+<!-- Self-audit against the Authority Principles before submission. -->
 
-## How Has This Been Tested?
+- [ ] **CQS Adherence:** Is this PR purely a Command (writes) or purely a Query (reads)? (Avoid mixing).
+- [ ] **Guard Clauses:** Are excessive nested `if/else` statements eliminated in favor of early returns?
+- [ ] **Self-Documenting Code:** Is the code readable without relying on excessive line-by-line comments?
+- [ ] **Security:** Are all external inputs (from user gestures or peripherals) appropriately validated/sanitized?
 
-Describe the tests that you ran to verify your changes. Please also note any relevant testing configurations.
+---
 
-*   Local testing: [Describe how you tested locally, e.g., `npm test`, running the app on an emulator/device].
-*   Automated tests: [Mention if CI tests cover these changes].
+**⚠️ SELF-REVIEW CONFIRMATION**
 
-## Screenshots (if applicable)
-
-If your changes involve UI modifications, please provide screenshots or screen recordings to demonstrate the visual impact.
-
-## Additional Context
-
-Add any other context about the problem or solution here.
+By checking the boxes above, I confirm that this branch has passed all local linting (`biome check --apply`) and local testing (`jest` or `vitest`) with **ZERO WARNINGS OR ERRORS**.
