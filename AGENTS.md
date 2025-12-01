@@ -36,7 +36,7 @@
     * **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **Tauri v2.x** (Native), **WXT** (Extensions).
     * **State:** **Signals** (Standardized).
     * **Lint/Test:** **Biome** (Speed) + **Vitest** (Unit) + **Playwright** (E2E).
-    * **Project Specific:** `ScanFlow-Mobile-Scanner-Utility-React-Native` is a **React Native mobile application**, utilizing JavaScript. Therefore, the **Apex Toolchain for Scenario A** will be applied, adapted for React Native.
+    * **Project Specific:** `ScanFlow-Mobile-Scanner-Utility-React-Native` is a JavaScript React Native mobile app, therefore, the **Apex Toolchain for Scenario A** will be applied, with React Native specific adaptations.
 * **SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go)**
     * **Stack:** **Rust 1.8x** (Cargo) or **Go 1.2x**.
     * **Lint:** **Clippy** / **GolangCI-Lint**.
@@ -50,8 +50,8 @@
 **The Loop:**
 1.  **Analyze:** Scan the codebase.
 2.  **Fix:** Apply architectural patterns and fixes.
-3.  **Lint/Format:** Run `biome check --apply` / `ruff check --fix` (or equivalent for JS/RN).
-4.  **Test:** Run `vitest` / `pytest` (or equivalent for RN).
+3.  **Lint/Format:** Run `biome check --apply` / `ruff check --fix`.
+4.  **Test:** Run `vitest` / `pytest`.
 5.  **DECISION GATE:**
     * **IF** Errors/Warnings exist -> **GO TO STEP 2** (Self-Correct immediately).
     * **IF** Clean -> **COMMIT** and Present.
