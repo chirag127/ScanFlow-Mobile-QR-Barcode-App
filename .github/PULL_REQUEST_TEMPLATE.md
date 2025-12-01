@@ -1,43 +1,46 @@
----
-title: "[Feature/Fix/Docs] - Brief Description"
-labels: ["Type: Feature", "Type: Bug", "Type: Documentation", "Status: In Progress"]
-assignees:
-  - YourUsername
+# Pull Request Template
 
---- 
+## Pull Request Checklist
+
+Before submitting your pull request, please review and check off the following items:
+
+*   [ ] **Commit Message Format:** My commit messages adhere to the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification (e.g., `feat: add user authentication`, `fix: resolve infinite loop in scanner`, `docs: update README with build instructions`).
+*   [ ] **Code Formatting:** My code is formatted according to the project's standards (e.g., using Biome/Ruff). I have run the formatter and linter.
+*   [ ] **Testing:** My changes include relevant unit and/or integration tests. All tests are passing.
+*   [ ] **Documentation:** I have updated any relevant documentation (e.g., `README.md`, code comments if necessary for *why* not *what*).
+*   [ ] **Self-Review:** I have performed a thorough self-review of my own code and addressed potential issues.
+*   [ ] **Branch:** My branch is up-to-date with the latest changes from the `main` branch.
+*   [ ] **AI Agent Directives:** If applicable, I have considered how my changes align with the AI Agent Directives in `AGENTS.md`.
 
 ## Description
 
-[Provide a clear and concise description of the changes. What problem are you solving? What are the key features or fixes?]
+Briefly describe the changes introduced by this pull request. What problem does it solve, or what feature does it add?
+
+(Please provide a clear and concise summary here.)
 
 ## Related Issues
 
-- [Link to related issue(s), if any.  Use "Closes #<issue_number>" to automatically close the issue when the PR is merged.]
+If this pull request resolves or relates to any open issues, please link them here (e.g., `Closes #123`, `Fixes #456`).
 
-## Changes
+## Type of Change
 
-[Describe the changes in detail. Break down the changes into logical sections.  Include specific file modifications, additions, or removals.]
+*   [ ] Bug fix (non-breaking change which fixes an issue)
+*   [ ] New feature (non-breaking change which adds functionality)
+*   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+*   [ ] Documentation update
+*   [ ] Chore (maintenance, refactoring, etc.)
 
-- [ ] Code is well-formatted and follows project style guidelines (Biome)
-- [ ] Code has been tested thoroughly (Vitest/Playwright)
-- [ ] All new and existing tests pass
-- [ ] Documentation has been updated (if applicable)
-- [ ] The changes are backwards compatible
-- [ ] Any breaking changes have been clearly communicated
+## How Has This Been Tested?
 
-## Screenshots/Visuals (if applicable)
+Describe the tests that you ran to verify your changes. Please also note any relevant testing configurations.
 
-[Include screenshots or videos to showcase the changes.  Especially important for UI changes.]
+*   Local testing: [Describe how you tested locally, e.g., `npm test`, running the app on an emulator/device].
+*   Automated tests: [Mention if CI tests cover these changes].
 
-## Checklist
+## Screenshots (if applicable)
 
-- [ ] I have read the [CONTRIBUTING.md](.github/CONTRIBUTING.md) guide.
-- [ ] I have followed the project's code style guidelines.
-- [ ] My code includes comprehensive tests.
-- [ ] I have updated the documentation (if necessary).
-- [ ] I have considered the security implications of my changes.
-- [ ] I have squashed my commits and written clear commit messages (Conventional Commits).
+If your changes involve UI modifications, please provide screenshots or screen recordings to demonstrate the visual impact.
 
-## Additional Notes
+## Additional Context
 
-[Add any other relevant information, context, or considerations.]
+Add any other context about the problem or solution here.
