@@ -1,223 +1,182 @@
-# ScanFlow-Mobile-Scanner-Utility
+# ScanFlow: High-Performance QR & Barcode Mobile Scanner App
 
-![Build Status](https://img.shields.io/github/actions/workflow/user/your-username/your-repo/main.yml?label=Build&logo=github)
-![Code Coverage](https://img.shields.io/codecov/c/github/your-username/your-repo?label=Coverage&logo=codecov)
-![TypeScript Version](https://img.shields.io/badge/TypeScript-6.x-blue?logo=typescript)
-![Vite Version](https://img.shields.io/badge/Vite-7.x-yellow?logo=vite)
-![Biome Version](https://img.shields.io/badge/Biome-latest-brightgreen?logo=biome)
-![License](https://img.shields.io/github/license/your-username/your-repo?label=License&logo=github)
-![GitHub Stars](https://img.shields.io/github/stars/your-username/your-repo?style=social&label=Star%20⭐)
+[![Build Status](https://img.shields.io/github/actions/workflow/user/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/ci.yml?style=flat-square&logo=github)](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/actions/workflows/ci.yml)
+[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App?style=flat-square&logo=codecov)](https://codecov.io/gh/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App)
+[![Tech Stack](https://img.shields.io/badge/Tech-React%20Native%2C%20Expo%2C%20TypeScript-blue?style=flat-square&logo=react)](https://reactnative.dev/)
+[![Lint/Format](https://img.shields.io/badge/Linter-Biome-orange?style=flat-square&logo=biome)](https://biome.dev/)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-red?style=flat-square&logo=creativecommons)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![GitHub Stars](https://img.shields.io/github/stars/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App?style=flat-square&logo=githubstar)](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App)
 
-## BLUF
-ScanFlow is an elite, high-performance, cross-platform mobile application engineered with React Native and Expo, offering rapid scanning and precise decoding of QR codes and diverse barcode formats, optimized for superior efficiency and an intuitive user experience.
+[**⭐ Star this Repo ⭐**](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App)
 
-## Architecture Overview
+ScanFlow is an elite, cross-platform mobile scanner application built with React Native and Expo, designed for high-performance QR and barcode scanning. It delivers a fast, intuitive user experience for both iOS and Android, optimized for efficiency and precision data capture in demanding environments.
 
-```ascii
-. 
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── features/
-│   │   ├── scanner/
-│   │   │   ├── components/
-│   │   │   ├── ui/
-│   │   │   └── index.ts
-│   │   └── ...
-│   ├── navigation/
-│   ├── providers/
-│   ├── screens/
-│   ├── services/
-│   ├── styles/
-│   ├── utils/
-│   └── index.tsx
-├── tests/
-│   ├── mocks/
-│   └── ...
-├── .github/
-│   ├── workflows/
-│   │   └── ci.yml
-│   ├── CODEOWNERS
-│   └── ...
-├── .vscode/
-├── app.json
-├── biome.json
-├── index.js
-├── LICENSE
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
-```
+---
 
-## Table of Contents
+## 📜 Table of Contents
 
-* [Features](#features)
-* [Tech Stack](#tech-stack)
-* [Getting Started](#getting-started)
-* [Development Scripts](#development-scripts)
-* [Contribution Guidelines](#contribution-guidelines)
-* [License](#license)
-* [AI Agent Directives](#ai-agent-directives)
+*   [🚀 Architecture](#-architecture)
+*   [🛠️ Tech Stack](#️-tech-stack)
+*   [✅ Core Principles](#-core-principles)
+*   [⚙️ Development Setup](#-development-setup)
+*   [📜 AI Agent Directives](#-ai-agent-directives)
+*   [⚖️ License](#️-license)
 
-## Features
+---
 
-* **High-Performance Scanning:** Leverages native device capabilities for rapid QR and barcode detection.
-* **Cross-Platform Compatibility:** Built with React Native and Expo for seamless iOS and Android deployment.
-* **Intuitive User Experience:** Clean, modern UI designed for optimal usability and efficiency.
-* **Diverse Format Support:** Decodes a wide array of standard barcode symbologies.
-* **Optimized Efficiency:** Engineered for minimal resource consumption and maximum speed.
+## 🚀 Architecture
 
-## Tech Stack
+ScanFlow adopts a **Modular Monolith** architecture, ensuring clear separation of concerns within a unified codebase. This approach enhances maintainability, testability, and scalability for the mobile application.
 
-* **Language:** TypeScript 6.x
-* **Framework:** React Native (Expo)
-* **Bundler:** Vite 7.x
-* **Styling:** TailwindCSS (via native configuration)
-* **Linting/Formatting:** Biome
-* **Testing:** Vitest (Unit), Playwright (E2E - future integration)
-* **State Management:** Signals (Standardized)
-* **Architecture:** Feature-Sliced Design (FSD) Principles
+mermaid
+graph TD
+    A[Mobile Client (React Native/Expo)] --> B{Scanner Module}
+    B --> C[Computer Vision Library]
+    B --> D[Data Parsing & Validation]
+    A --> E[UI Components]
+    A --> F[Navigation]
+    A --> G[State Management]
+    A --> H[API Integrations (Optional)]
 
-## Getting Started
 
-### Prerequisites
+---
 
-* Node.js (v20 LTS or later)
-* npm or Yarn package manager
-* Expo CLI
+## 🛠️ Tech Stack (Late 2025 Standards)
 
-### Installation
+*   **Core Framework:** React Native 0.75+
+*   **Development Platform:** Expo 52+
+*   **Language:** TypeScript 5.x (Strict Mode)
+*   **Bundler/Build:** Metro Bundler (with Expo)
+*   **Linting & Formatting:** Biome 1.7+
+*   **Testing:** Vitest (Unit/Integration), Playwright (E2E, if applicable for web/desktop builds)
+*   **Computer Vision:** react-native-vision-camera or similar high-performance native module.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
-    ```
+---
 
-2.  **Install dependencies:**
-    ```bash
+## ✅ Core Principles
+
+*   **SOLID:** Ensuring maintainable and extensible code through Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles.
+*   **DRY (Don't Repeat Yourself):** Minimizing redundancy by abstracting common logic into reusable components and utility functions.
+*   **YAGNI (You Ain't Gonna Need It):** Focusing on current requirements to avoid over-engineering and unnecessary complexity.
+*   **Performance First:** Prioritizing efficient scanning, smooth UI, and minimal resource consumption.
+
+---
+
+## ⚙️ Development Setup
+
+Follow these steps to set up the development environment:
+
+1.  **Clone the Repository:**
+    bash
+    git clone https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App.git
+    cd ScanFlow-HighPerformance-QRBarcode-MobileScanner-App
+    
+
+2.  **Install Dependencies:**
+    bash
     npm install
     # or
     yarn install
-    ```
+    
 
-### Running the Application
-
-*   **Start the Expo development server:**
-    ```bash
+3.  **Start the Development Server:**
+    bash
     npx expo start
-    ```
+    
+    This will launch the Expo Go app or allow you to run on a simulator/emulator. Use `a` for Android emulator and `i` for iOS simulator.
 
-    This will launch the Expo Go app on your emulator/device or provide a QR code to scan with your physical device.
+4.  **Lint and Format:**
+    bash
+    npx @biomejs/biome format --write .
+    npx @biomejs/biome lint --apply .
+    
 
-## Development Scripts
+### Scripts
 
-| Script        | Description                                   |
-| ------------- | --------------------------------------------- |
-| `npm run dev` | Starts the Expo development server.           |
-| `npm run lint`| Runs Biome to check and format code.        |
-| `npm run test`| Executes unit tests with Vitest.              |
-| `npm run build`| Creates a production build (e.g., `.ipa`, `.apk`). |
+| Script            | Description                                          |
+| ------------------ | ---------------------------------------------------- |
+| `npm install`      | Installs project dependencies.                       |
+| `npx expo start`   | Starts the Expo development server.                  |
+| `npx expo run:ios` | Builds and runs the app on an iOS simulator.         |
+| `npx expo run:android`| Builds and runs the app on an Android emulator.      |
+| `biome format`     | Formats code using Biome.                            |
+| `biome lint`       | Lints code using Biome and attempts to apply fixes. |
 
-## Contribution Guidelines
+---
 
-See [CONTRIBUTING.md](./.github/CONTRIBUTING.md) for details on how to contribute.
-
-## License
-
-This project is licensed under the CC BY-NC license - see the [LICENSE](LICENSE) file for details.
+## 🤖 AI Agent Directives
 
 <details>
-<summary>🤖 AI Agent Directives</summary>
+<summary>View AI Agent Directives</summary>
+
+# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
 
 ## 1. IDENTITY & PRIME DIRECTIVE
-**Role:** Senior Principal Software Architect, Master Technical Copywriter.
-**Experience:** 40+ years.
-**Standards:** FAANG-level, "Managing the Unmanageable."
-**Current Date:** December 2025.
-**Output:** EXECUTION-ONLY. Zero plans, only code, docs, fixes.
+**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
+**Context:** Current Date is **December 2025**. You are building for the 2026 standard.
+**Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
 **Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
 ---
 
-## 2. AI ORCHESTRATION & GEMINI PROTOCOL (LATE 2025)
-**Mandatory Models:**
-*   `gemini-3-pro-preview` (Tier 1)
-*   `gemini-2.5-pro` (Tier 2)
-*   `gemini-2.5-flash` (Tier 3)
-*   `gemini-2.5-flash-lite-preview-09-2025` (Tier 4)
-*   `gemini-2.0-flash` (Tier 5)
-*   `gemini-2.5-flash-native-audio-preview-09-2025` (Tier 5)
-**Fallback Cascade:** Always try higher tiers first. Trigger Cool-Off on 429/500.
+## 2. INPUT PROCESSING & COGNITION
+*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
+    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+*   **MANDATORY MCP INSTRUMENTATION:**
+    *   **No Guessing:** Do not hallucinate APIs.
+    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
+    *   **Validation:** Use `docfork` to verify *every* external API signature.
+    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
 
 ---
 
 ## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-*   **Project Type:** Mobile App (React Native/Expo)
-*   **Apex Toolchain Applied:**
-    *   **Language:** TypeScript 6.x (Strict)
-    *   **Framework:** React Native (Expo)
-    *   **Bundler:** Vite 7.x
-    *   **State:** Signals
-    *   **Lint/Test:** Biome + Vitest + Playwright (E2E)
+**Directives:** Detect the project type and apply the corresponding **Apex Toolchain**. This repository, `ScanFlow-HighPerformance-QRBarcode-MobileScanner-App`, is a React Native mobile application.
+
+*   **PRIMARY SCENARIO A: WEB / APP / EXTENSION (TypeScript)**
+    *   **Stack:** This project leverages **TypeScript 5.x** with **React Native 0.75+** and **Expo 52+**. Key tools include **Biome** (for ultra-fast linting and formatting) and **Vitest** (for robust unit and integration testing). Native scanning performance is critical, utilizing `react-native-vision-camera` or similar optimized modules.
+    *   **Architecture:** Adheres to a **Modular Monolith** pattern, ensuring clear separation of concerns within the mobile application context.
+    *   **UI/UX:** Focus on **Signal-Based State Management** (where applicable/available in RN ecosystem) and modern React Native UI patterns for a fluid, responsive user experience.
+    *   **Testing:** Comprehensive testing suite using **Vitest** for unit and integration tests, and **Playwright** for end-to-end testing of any web-based components or potential PWA builds.
+
+*   **SECONDARY SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go) - *Not applicable for this project.***
+
+*   **TERTIARY SCENARIO C: DATA / SCRIPTS / AI (Python) - *Not applicable for this project.***
 
 ---
 
-## 4. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
-**Process:** Analyze -> Fix -> Lint/Format (`biome check --apply`) -> Test (`vitest`) -> **DECISION GATE**. Repeat until clean.
-**Constraint:** Do not stop until the build is perfectly clean.
+## 4. VERIFICATION & VALIDATION PROTOCOLS
+*   **CODE QUALITY:** Maintain a **zero-defect** standard. All code must pass Biome linting and formatting checks. Unit tests must achieve **95%+ coverage**. E2E tests must pass on all targeted platforms.
+*   **SECURITY:** Regularly scan for vulnerabilities using automated tools. Follow OWASP Mobile Security Project guidelines. Ensure no sensitive data is logged or exposed.
+*   **PERFORMANCE:** Continuously monitor and optimize scanning speed, app startup time, and memory usage. Adhere to **(December 2025) industry benchmarks** for mobile scanning applications.
 
 ---
 
-## 5. CORE ARCHITECTURAL PRINCIPLES
-*   **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
-*   **MODULARITY:** Feature-First Structure (`features/scanner`).
-*   **CQS:** Methods are Commands (Action) or Queries (Data).
-*   **12-Factor App:** Config in environment.
+## 5. DEVELOPMENT WORKFLOW & TOOLS
+*   **Version Control:** Git (GitHub).
+*   **Branching Strategy:** GitFlow or GitHub Flow (enforce small, focused pull requests).
+*   **CI/CD:** GitHub Actions (integrated via `ci.yml`) for automated builds, tests, and deployments.
+*   **Package Management:** npm/Yarn.
 
 ---
 
-## 6. CODE HYGIENE & STANDARDS
-*   **SEMANTIC NAMING:** Descriptive verbs, `camelCase` (JS/TS).
-*   **CLEAN CODE:** Verticality, Guard Clauses, DRY, KISS. Zero comments unless explaining "Why."
-
----
-
-## 7. RELIABILITY, SECURITY & SUSTAINABILITY
-*   **DEVSECOPS:** Sanitize inputs (OWASP 2025), SBOMs, Fail Fast, Encryption.
-*   **EXCEPTION HANDLING:** Never crash, `try-catch-finally`, retry logic.
-*   **GREEN SOFTWARE:** Lightest tool, efficient loops, lazy loading.
-
----
-
-## 8. COMPREHENSIVE TESTING STRATEGY
-*   **FOLDER SEPARATION:** `tests/` only.
-*   **TESTING PYRAMID (F.I.R.S.T.):** Fast, Isolated, Repeatable.
-*   **COVERAGE MANDATE:** 1:1 file mapping, test success/failure/edge cases. Zero console errors.
-
----
-
-## 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
-*   **VISUAL LANGUAGE:** Liquid Glass + Neo-Brutalist + Material You 3.0. Fluid animations.
-*   **PERFORMANCE UX:** INP < 200ms. Optimistic UI.
-*   **INTERACTION DESIGN:** Hyper-personalization, Micro-interactions.
-*   **HYPER-CONFIGURABILITY:** All features user-configurable.
-
----
-
-## 10. DOCUMENTATION & VERSION CONTROL
-*   **HERO-TIER README:** BLUF, Live Sync, Visuals, AI block, "Star ⭐ this Repo."
-*   **ADVANCED GIT:** Context Archaeology, Conventional Commits, Semantic Versioning.
-
----
-
-## 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
-*   **Workflows:** Integrity (Lint+Test), Security (Audit+SBOM), Release (Versioning+Artifacts), Deps (Auto-merge).
-
----
-
-## 12. THE ATOMIC EXECUTION CYCLE
-**Process:** Audit -> Research -> Plan -> Act -> Automate -> Docs -> Verify -> **REITERATE** (if errors) -> Commit.
-**Constraint:** Commit only when perfectly clean.
+## 6. TESTING STRATEGY
+*   **Unit Tests:** Utilize Vitest for testing individual components, functions, and hooks.
+*   **Integration Tests:** Employ Vitest to test interactions between different modules and services.
+*   **End-to-End (E2E) Tests:** Implement Playwright for simulating user interactions across the application lifecycle, ensuring holistic functionality.
+*   **Manual QA:** Perform thorough manual testing on target devices and OS versions.
 
 </details>
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**. See the [LICENSE](LICENSE) file for more details.
+
+*   **Attribution:** You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+*   **NonCommercial:** You may not use the material for commercial purposes.
+
+By contributing to or using this project, you agree to abide by these terms.
