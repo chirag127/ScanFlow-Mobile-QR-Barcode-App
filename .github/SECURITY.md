@@ -1,42 +1,51 @@
-# Security Policy
+# Security Policy for ScanFlow-HighPerformance-QRBarcode-MobileScanner-App
 
-## Vulnerability Reporting
+As an Apex-engineered project adhering to the **Zero-Defect, High-Velocity, Future-Proof** philosophy, security is integrated from inception.
 
-We take security very seriously. If you discover any security vulnerabilities within **ScanFlow-Mobile-Scanner-Utility-React-Native**, please report them responsibly.
+## 1. Overview
 
-## Reporting a Vulnerability
+This repository follows the principles outlined in the **AGENTS.md** directive, prioritizing secure coding practices (SOLID, DRY) and verifiable component integrity.
 
-To report a security issue, please follow these steps:
+## 2. Supported Versions
 
-1.  **Do NOT** disclose the vulnerability publicly. This includes social media, forums, or public issue trackers. Public disclosure can endanger users and the project.
-2.  **Email Security:** Send an email detailing the vulnerability to `security@example.com`. Please use a descriptive subject line, such as "Security Vulnerability Report - ScanFlow-Mobile-Scanner-Utility-React-Native".
-3.  **Details:** In your email, please provide as much information as possible, including:
-    *   A clear description of the vulnerability.
-    *   Steps to reproduce the vulnerability.
-    *   The affected version(s) of the software.
-    *   Any potential impact or exploitability.
-    *   (Optional) A suggested mitigation or fix.
-4.  **Encrypted Communication:** If you wish to encrypt your report, our PGP public key can be provided upon request.
+We actively support and maintain the latest production-ready versions of our core stack:
 
-## Our Commitment
+*   **React Native / Expo:** Currently targeting the latest stable release channel (as of December 2025).
+*   **TypeScript:** Strict mode is enforced on all code.
+*   **Scanning Library:** Dependencies related to computer vision and hardware interfacing are subject to rigorous security audits.
 
-*   We will acknowledge your report within **72 hours**.
-*   We will investigate the reported vulnerability thoroughly.
-*   We will inform you of the progress and estimated timeline for a fix.
-*   We will provide credit to the reporter in our release notes once the vulnerability is fixed and publicly disclosed, provided the reporter agrees to this.
+## 3. Reporting a Vulnerability
 
-## Scope
+We welcome responsible disclosure of security vulnerabilities.
 
-This security policy applies to the **ScanFlow-Mobile-Scanner-Utility-React-Native** codebase and all officially released versions of the application. Contributions that introduce security vulnerabilities will be rejected.
+If you discover a security issue, please follow these steps immediately. **DO NOT** create a public issue or pull request that discloses the vulnerability details.
 
-## Secure Development Practices
+1.  **Private Disclosure:** Email the security team directly at `security@chirag127.dev` (Substitute with actual contact if applicable, otherwise use a placeholder/private channel directive).
+2.  **Include Details:** In your email, provide a detailed description of the vulnerability, the affected component(s), and steps to reproduce it.
+3.  **Wait for Acknowledgment:** Wait for an acknowledgment from the security team before disclosing the issue publicly.
 
-We strive to follow secure development practices, including:
+## 4. Disclosure Timeline
 
-*   **Input Validation:** Rigorous validation of all user inputs and external data.
-*   **Dependency Management:** Regular scanning and updating of project dependencies to mitigate known vulnerabilities.
-*   **Least Privilege:** Applying the principle of least privilege to all components and permissions.
-*   **Error Handling:** Implementing robust error handling to prevent information leakage.
-*   **Code Reviews:** Conducting thorough code reviews with a focus on security.
+We commit to the following timeline upon receiving a valid vulnerability report:
 
-Thank you for helping us keep **ScanFlow-Mobile-Scanner-Utility-React-Native** secure.
+| Action | Timeframe |
+| :--- | :--- |
+| Acknowledgment of Report | Within 48 hours |
+| Vulnerability Triage & Fix Development | Up to 14 days |
+| Release Candidate Preparation | Up to 21 days |
+| Public Disclosure (Post-Patch) | Coordinated release, typically 7 days after patch release. |
+
+## 5. Automated Security Scanning
+
+This repository utilizes GitHub Actions for continuous security monitoring:
+
+*   **Dependency Scanning:** Enabled via workflows to check for known vulnerabilities in `package.json` dependencies.
+*   **Static Analysis:** Enforced via linting tools (Biome/Ruff equivalents for JavaScript/TypeScript) integrated into the CI pipeline (`.github/workflows/ci.yml`). Code failing security checks will halt the build.
+
+## 6. Secure Development Practices
+
+All contributions must adhere to the following:
+
+*   **Input Validation:** All data received from the mobile environment or external sources must be aggressively validated, especially when dealing with camera feeds or system APIs.
+*   **Secrets Management:** No secrets, API keys, or credentials are to be committed. All necessary keys must be injected via environment variables during the build/runtime process, managed securely through GitHub Secrets or appropriate mobile secure storage mechanisms.
+*   **Dependency Review:** All new dependencies must be reviewed for known CVEs before merging. Use `npm audit` checks within the CI pipeline.
